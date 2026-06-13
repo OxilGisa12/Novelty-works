@@ -15,10 +15,10 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* 1. Added 'h-20' to lock the navbar height exactly to 80px */}
-      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-13 h-20 bg-transparent backdrop-blur-md transition-all duration-300">
+      {/* Dark Glassmorphism Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 md:px-12 h-20 bg-[#0B132B]/80 backdrop-blur-md border-b border-white/10 transition-all duration-300">
         {/* Left side: menu and Logo */}
-        <div className="flex items-center gap-6 text-white">
+        <div className="flex items-center gap-6 text-white w-full justify-between md:justify-start">
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="flex flex-col justify-center items-center w-6 h-6 focus:outline-none group cursor-pointer"
@@ -29,7 +29,7 @@ export const Navbar = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <div className="flex flex-col justify-between w-6 h-4 w-full">
+              <div className="flex flex-col justify-between w-6 h-4">
                 <span className="w-full h-0.5 bg-white rounded-full group-hover:bg-gray-200 transition-colors"></span>
                 <span className="w-full h-0.5 bg-white rounded-full group-hover:bg-gray-200 transition-colors"></span>
                 <span className="w-full h-0.5 bg-white rounded-full group-hover:bg-gray-200 transition-colors"></span>
@@ -52,7 +52,7 @@ export const Navbar = () => {
                 letterSpacing="1"
               >
                 <tspan fill="#FFFFFF">NOVELTY</tspan>
-                <tspan fill="#00D54B" dx="1">WORKS LTD</tspan>
+                <tspan fill="#3B82F6" dx="1">WORKS LTD</tspan>
               </text>
             </svg>
           </a>
@@ -68,9 +68,9 @@ export const Navbar = () => {
         />
       )}
 
-      {/* 2. Drawer perfectly starts at top-20 (80px), connecting seamlessly to the h-20 nav */}
+      {/* Drawer perfectly starts at top-20 (80px), seamlessly connecting to the nav */}
       <div 
-        className={`fixed top-20 left-0 bottom-0 w-full max-w-sm bg-white z-40 shadow-2xl transition-transform duration-300 ease-in-out overflow-y-auto px-13 py-10 ${
+        className={`fixed top-20 left-0 bottom-0 w-full max-w-sm bg-white z-40 shadow-2xl transition-transform duration-300 ease-in-out overflow-y-auto px-10 py-10 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -80,7 +80,7 @@ export const Navbar = () => {
               <a 
                 href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} 
                 onClick={() => setIsOpen(false)} 
-                className="hover:text-[#00D54B] transition-colors block py-1 w-fit"
+                className="hover:text-[#3B82F6] transition-colors block py-1 w-fit"
               >
                 {item}
               </a>
