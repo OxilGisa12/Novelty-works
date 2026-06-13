@@ -52,7 +52,8 @@ export const Navbar = () => {
                 letterSpacing="1"
               >
                 <tspan fill="#FFFFFF">NOVELTY</tspan>
-                <tspan fill="#3B82F6" dx="1">WORKS LTD</tspan>
+                {/* Logo colors strictly untouched as requested */}
+                <tspan fill="#00D54B" dx="1">WORKS LTD</tspan>
               </text>
             </svg>
           </a>
