@@ -23,63 +23,87 @@ export const Hero = () => {
       {/* Left Column: Text, Checks */}
       <div className="lg:col-span-7 flex flex-col justify-center space-y-8 text-white">
         
-        {/* Massive Headline */}
-        <h1 className="text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] font-['Abril_Fatface']">
+        {/* Massive Headline - Responsive text size prevents breaking on mobile screens */}
+        <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95] font-['Abril_Fatface'] break-words">
           Rwanda’s #1 <br />
           choice for smart <br />
           digital solutions
         </h1>
 
-        {/* Benefit Checkmarks List - Styled for Tech Blue Theme */}
+        {/* Benefit Checkmarks List - Links styled with hoverable black background */}
         <ul className="space-y-4 max-w-xl">
-          <li className="flex items-start gap-3 text-lg md:text-xl font-medium">
-            <span className="text-[#38bdf8] font-bold text-xl mt-0.5">✓</span>
+          <li className="flex items-start gap-3 text-lg md:text-xl font-medium leading-loose">
+            <span className="text-[#38bdf8] font-bold text-xl mt-0.5 shrink-0">✓</span>
             <span>
-              <a href="#software-dev" onClick={(e) => handleScrollToFeature(e, 'software-dev')} className="cursor-pointer hover:text-gray-200 underline decoration-sky-500/40 underline-offset-4 transition-colors">
+              <a 
+                href="#software-dev" 
+                onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
+                className="cursor-pointer hover:bg-black hover:text-white px-2.5 py-1.5 rounded-lg transition-colors duration-200"
+              >
                 Software Development
               </a> 
               {' & '}
-              <a href="#cloud-services" onClick={(e) => handleScrollToFeature(e, 'cloud-services')} className="cursor-pointer hover:text-gray-200 underline decoration-sky-500/40 underline-offset-4 transition-colors">
+              <a 
+                href="#cloud-services" 
+                onClick={(e) => handleScrollToFeature(e, 'cloud-services')} 
+                className="cursor-pointer hover:bg-black hover:text-white px-2.5 py-1.5 rounded-lg transition-colors duration-200"
+              >
                 Cloud Services Management
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 text-lg md:text-xl font-medium">
-            <span className="text-[#38bdf8] font-bold text-xl mt-0.5">✓</span>
+          <li className="flex items-start gap-3 text-lg md:text-xl font-medium leading-loose">
+            <span className="text-[#38bdf8] font-bold text-xl mt-0.5 shrink-0">✓</span>
             <span>
-              <a href="#it-consultancy" onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} className="cursor-pointer hover:text-gray-200 underline decoration-sky-500/40 underline-offset-4 transition-colors">
+              <a 
+                href="#it-consultancy" 
+                onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
+                className="cursor-pointer hover:bg-black hover:text-white px-2.5 py-1.5 rounded-lg transition-colors duration-200"
+              >
                 IT Services Consultancy
               </a>
               {' & '}
-              <a href="#digital-marketing" onClick={(e) => handleScrollToFeature(e, 'digital-marketing')} className="cursor-pointer hover:text-gray-200 underline decoration-sky-500/40 underline-offset-4 transition-colors">
+              <a 
+                href="#digital-marketing" 
+                onClick={(e) => handleScrollToFeature(e, 'digital-marketing')} 
+                className="cursor-pointer hover:bg-black hover:text-white px-2.5 py-1.5 rounded-lg transition-colors duration-200"
+              >
                 Digital Marketing & Visibility
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 text-lg md:text-xl font-medium">
-            <span className="text-[#38bdf8] font-bold text-xl mt-0.5">✓</span>
+          <li className="flex items-start gap-3 text-lg md:text-xl font-medium leading-loose">
+            <span className="text-[#38bdf8] font-bold text-xl mt-0.5 shrink-0">✓</span>
             <span>
-              <a href="#corporate-tools" onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} className="cursor-pointer hover:text-gray-200 underline decoration-sky-500/40 underline-offset-4 transition-colors">
+              <a 
+                href="#corporate-tools" 
+                onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
+                className="cursor-pointer hover:bg-black hover:text-white px-2.5 py-1.5 rounded-lg transition-colors duration-200"
+              >
                 Corporate Work Tools
               </a>
               {' & '}
-              <a href="#tech-integration" onClick={(e) => handleScrollToFeature(e, 'tech-integration')} className="cursor-pointer hover:text-gray-200 underline decoration-sky-500/40 underline-offset-4 transition-colors">
+              <a 
+                href="#tech-integration" 
+                onClick={(e) => handleScrollToFeature(e, 'tech-integration')} 
+                className="cursor-pointer hover:bg-black hover:text-white px-2.5 py-1.5 rounded-lg transition-colors duration-200"
+              >
                 Technology Integration & Support
               </a>
             </span>
           </li>
         </ul>
 
-        {/* Email Capture Form - Dark glass blue input field */}
+        {/* Email Capture Form - Dark glass blue input field with responsive text */}
         <form className="flex flex-row items-center gap-3 w-full max-w-xl pt-2">
           <input 
-          type="email" 
-          placeholder="Enter your email" 
-          className="w-full text-sm sm:text-base px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#00D54B] transition-colors"
+            type="email" 
+            placeholder="Enter your email" 
+            className="w-full text-sm sm:text-base px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#00D54B] transition-colors"
           />
           <button 
             type="submit" 
-            className="flex items-center justify-center bg-[#0284c7] text-white text-lg font-bold px-8 py-4 rounded h-10 whitespace-nowrap hover:bg-[#0369a1] transition-colors shadow-sm"
+            className="flex items-center justify-center bg-[#0284c7] text-white text-lg font-bold px-8 py-4 rounded h-10 whitespace-nowrap hover:bg-[#0369a1] transition-colors shadow-sm cursor-pointer"
           >
             Contact Us
           </button>

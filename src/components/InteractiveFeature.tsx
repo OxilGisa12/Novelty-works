@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const features = [
   {
     id: 'software-dev',
-    title: 'Software Dev', // Slightly shortened for better mobile fit
+    title: 'Software Dev',
     headline: 'Custom Software & Applications',
     bullets: [
       'Custom web and mobile applications tailored to your needs.',
@@ -94,9 +94,8 @@ export const InteractiveFeatures = () => {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         
-        {/* Left Column: Stacked/Faded Words (Slides Navigation) */}
-        {/* Adjusted flex direction to row on small/medium screens to prevent awkward huge vertical blocks */}
-        <div className="lg:col-span-5 flex flex-wrap lg:flex-col justify-start gap-4 lg:space-y-6">
+        {/* Left Column: Forced vertical stack for consistent layout on all screens */}
+        <div className="lg:col-span-5 flex flex-col justify-start gap-4">
           {features.map((feature, index) => {
             const isActive = index === activeIdx;
             return (
@@ -111,7 +110,7 @@ export const InteractiveFeatures = () => {
                     section.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className={`text-left transition-all duration-300 ease-in-out w-fit ${
+                className={`text-left transition-all duration-300 ease-in-out w-full ${
                   isActive 
                     ? 'opacity-100 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight font-[\'Abril_Fatface\'] text-white' 
                     : 'opacity-40 hover:opacity-70 text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight font-[\'Abril_Fatface\'] cursor-pointer hover:text-white'
