@@ -36,7 +36,7 @@ const features = [
   },
   {
     id: 'digital-marketing',
-    title: 'Digital Mktg',
+    title: 'Digital Marketing',
     headline: 'Online Visibility & Marketing',
     bullets: [
       'Search engine optimization (SEO) to rank higher.',
