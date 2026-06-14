@@ -1,6 +1,5 @@
 import React from 'react';
-// 1. Import the image directly (adjust the relative path to where your image actually is)
-import noveltyBanner from '../assets/noveltybanner.png'; // or './noveltybanner.png' if it's in the same folder
+import NoveltyBanner from '../assets/NoveltyBanner.png';
 
 export const Hero = () => {
   const handleScrollToFeature = (e: React.MouseEvent<HTMLAnchorElement>, featureId: string) => {
@@ -14,19 +13,21 @@ export const Hero = () => {
   };
 
   return (
-    <div className="pt-24 pb-16 min-h-screen w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 sm:px-8 max-w-7xl mx-auto overflow-hidden">
+    <div className="pt-36 md:pt-40 pb-16 min-h-[85vh] w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
       
-      {/* Left Column: Text */}
-      <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0">
+      {/* Left Column: Text & Elements - Strictly pinned to the left grid across all devices */}
+      <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-2xl mx-auto lg:mx-0 items-start text-left">
         
-        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight break-words">
+        {/* Massive Headline */}
+        <h1 className="text-3xl xs:text-4xl md:text-5xl font-semibold tracking-tight leading-tight break-words w-full">
           <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
-        <ul className="space-y-4 w-full">
-          <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
-            <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
-            <span className="leading-none whitespace-nowrap">
+        {/* Links List - Flawlessly left-aligned on the exact same vertical grid line */}
+        <ul className="space-y-4 w-full flex flex-col items-start">
+          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-sm md:text-base font-medium">
+            <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
+            <span className="leading-tight">
               <a 
                 href="#software-dev" 
                 onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
@@ -44,9 +45,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
-            <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
-            <span className="leading-none whitespace-nowrap">
+          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-sm md:text-base font-medium">
+            <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
+            <span className="leading-tight">
               <a 
                 href="#it-consultancy" 
                 onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
@@ -64,9 +65,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
-            <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
-            <span className="leading-none whitespace-nowrap">
+          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-sm md:text-base font-medium">
+            <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
+            <span className="leading-tight">
               <a 
                 href="#corporate-tools" 
                 onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
@@ -86,20 +87,21 @@ export const Hero = () => {
           </li>
         </ul>
 
-        {/* Mobile Banner Image - Uses the imported variable */}
-        <div className="flex items-center justify-center w-full py-4 lg:hidden">
+        {/* Mobile Banner Image */}
+        <div className="flex items-center justify-start w-full py-4 lg:hidden">
           <img 
-            src={noveltyBanner} 
+            src={NoveltyBanner} 
             alt="Novelty Digital Solutions Banner" 
-            className="w-full max-w-[280px] h-auto object-contain rounded-2xl shadow-2xl"
+            className="w-full max-w-[320px] h-auto object-contain rounded-2xl shadow-2xl border border-gray-700/40"
           />
         </div>
 
-        <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl pt-2">
+        {/* Email Capture Form */}
+        <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl">
           <input 
             type="email" 
             placeholder="Enter your email" 
-            className="w-full text-sm sm:text-base px-4 py-3.5 rounded-lg bg-white/10 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#3B82F6] transition-colors"
+            className="w-full text-sm sm:text-base px-4 py-3.5 rounded-lg bg-white/5 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#3B82F6] transition-colors"
           />
           <button 
             type="submit" 
@@ -109,17 +111,18 @@ export const Hero = () => {
           </button>
         </form>
 
-        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed pt-2 break-words flex items-start gap-2">
+        {/* Disclaimer text */}
+        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed break-words flex items-start gap-2 justify-start">
           <span className="inline-flex items-center justify-center w-3.5 h-3.5 border border-gray-400 rounded-full text-[9px] cursor-pointer shrink-0 mt-0.5 hover:bg-white hover:text-black transition-colors">i</span>
           <span>"We don't just implement technology — we build partnerships. Every client's success is a direct measure of our own" ~ Novelty Works Ltd</span>
         </p>
 
       </div>
 
-      {/* Desktop Banner Image - Uses the imported variable */}
+      {/* Desktop Banner Image */}
       <div className="hidden lg:col-span-5 lg:flex items-center justify-center w-full h-full p-4">
         <img 
-          src={noveltyBanner} 
+          src={NoveltyBanner} 
           alt="Novelty Digital Solutions Banner" 
           className="w-full max-w-md h-auto object-contain rounded-2xl shadow-2xl"
         />

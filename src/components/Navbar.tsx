@@ -21,7 +21,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-6 text-white w-full justify-between md:justify-start">
           <button 
             onClick={() => setIsOpen(!isOpen)}
-            className="flex flex-col justify-center items-center w-6 h-6 focus:outline-none group cursor-pointer"
+            className="flex flex-col justify-center items-center w-6 h-6 focus:outline-none group cursor-pointer -ml-1 md:-ml-2"
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? (
