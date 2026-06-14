@@ -12,13 +12,14 @@ export const ChatWidget = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hello! Welcome to Novelty Works. How can I help you with our digital solutions today?",
+      text: "Mukiriya! Welcome to Novelty Works. How can we assist you with your digital solutions today?",
       sender: 'ai',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
+  const [hasReplied, setHasReplied] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   // Auto-scroll to bottom of chat
@@ -39,27 +40,31 @@ export const ChatWidget = () => {
 
     setMessages((prev) => [...prev, userMessage]);
     setInput('');
-    setIsTyping(true);
 
-    // Simulate AI response delay
-    setTimeout(() => {
-      const aiResponse: Message = {
-        id: (Date.now() + 1).toString(),
-        text: "Thanks for your message! Our team will get back to you shortly regarding your inquiry.",
-        sender: 'ai',
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      };
-      setMessages((prev) => [...prev, aiResponse]);
-      setIsTyping(false);
-    }, 1500);
+    // Only trigger AI response if it hasn't replied yet
+    if (!hasReplied) {
+      setIsTyping(true);
+
+      setTimeout(() => {
+        const aiResponse: Message = {
+          id: (Date.now() + 1).toString(),
+          text: "Thank you for reaching out. Please feel free to email us at info@noveltyworks.rw or contact us via WhatsApp at +250 793 232 22. We look forward to partnering with you, Murakoze",
+          sender: 'ai',
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        };
+        setMessages((prev) => [...prev, aiResponse]);
+        setIsTyping(false);
+        setHasReplied(true);
+      }, 1500);
+    }
   };
 
   return (
     <>
-      {/* Floating Action Button - Green Theme, pinned to the corner */}
+      {/* Floating Action Button - Dark Blue Theme */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-4 right-4 z-[9999] flex items-center justify-center w-14 h-14 bg-[#00D54B] text-white rounded-full shadow-2xl cursor-pointer hover:bg-[#02B33E] transition-all duration-300 hover:scale-105 md:bottom-6 md:right-6 ${
+        className={`fixed bottom-4 right-4 z-[9999] flex items-center justify-center w-14 h-14 bg-[#1E40AF] text-white rounded-full shadow-2xl cursor-pointer hover:bg-[#1E3A8A] transition-all duration-300 hover:scale-105 md:bottom-6 md:right-6 ${
           isOpen ? 'rotate-90 scale-90 opacity-0' : 'rotate-0 scale-100 opacity-100'
         }`}
         aria-label="Open chat"
@@ -78,7 +83,7 @@ export const ChatWidget = () => {
         {/* Header */}
         <div className="flex justify-between items-center px-6 py-4 bg-[#0B132B] border-b border-white/10">
           <div className="flex items-center gap-3">
-            <div className="w-3 h-3 bg-[#00D54B] rounded-full animate-pulse" />
+            <div className="w-3 h-3 bg-[#1E40AF] rounded-full animate-pulse" />
             <div>
               <h3 className="text-white font-bold text-sm tracking-wide">Novelty Assistant</h3>
               <p className="text-gray-400 text-[10px]">Always online</p>
@@ -107,7 +112,7 @@ export const ChatWidget = () => {
               <div
                 className={`px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${
                   msg.sender === 'user'
-                    ? 'bg-[#00D54B] text-white rounded-br-none'
+                    ? 'bg-[#1E40AF] text-white rounded-br-none'
                     : 'bg-white/5 text-gray-200 rounded-bl-none border border-white/5'
                 }`}
               >
@@ -126,18 +131,18 @@ export const ChatWidget = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Form - Green send button & focus state */}
+        {/* Input Form */}
         <form onSubmit={handleSend} className="p-4 bg-[#0B132B] border-t border-white/10 flex items-center gap-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your question here..."
-            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#00D54B] transition-colors"
+            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#1E40AF] transition-colors"
           />
           <button
             type="submit"
-            className="bg-[#00D54B] text-white p-3 rounded-xl hover:bg-[#02B33E] transition-colors cursor-pointer flex items-center justify-center"
+            className="bg-[#1E40AF] text-white p-3 rounded-xl hover:bg-[#1E3A8A] transition-colors cursor-pointer flex items-center justify-center"
             aria-label="Send message"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">

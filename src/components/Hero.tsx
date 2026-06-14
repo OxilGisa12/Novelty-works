@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NoveltyBanner from '../assets/NoveltyBanner.png';
 
 export const Hero = () => {
+  const [email, setEmail] = useState('');
+
   const handleScrollToFeature = (e: React.MouseEvent<HTMLAnchorElement>, featureId: string) => {
     e.preventDefault();
     window.location.hash = featureId;
@@ -10,6 +12,12 @@ export const Hero = () => {
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Redirects to the /reach-us page carrying the entered email as a query parameter
+    window.location.href = `/reach-us?email=${encodeURIComponent(email)}`;
   };
 
   return (
@@ -26,12 +34,12 @@ export const Hero = () => {
         {/* Links List - Flawlessly left-aligned on the exact same vertical grid line */}
         <ul className="space-y-4 w-full flex flex-col items-start">
           <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
-            <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5">✓</span>
             <span className="leading-tight">
               <a 
                 href="#software-dev" 
                 onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
-                className="cursor-pointer underline underline-offset-4 decoration-[#3B82F6] hover:decoration-blue-400 transition-colors"
+                className="cursor-pointer underline underline-offset-8 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors"
               >
                 Software Development
               </a> 
@@ -39,19 +47,19 @@ export const Hero = () => {
               <a 
                 href="#cloud-services" 
                 onClick={(e) => handleScrollToFeature(e, 'cloud-services')} 
-                className="cursor-pointer underline underline-offset-4 decoration-[#3B82F6] hover:decoration-blue-400 transition-colors"
+                className="cursor-pointer underline underline-offset-8 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors"
               >
                 Cloud Services Management
               </a>
             </span>
           </li>
           <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
-            <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5">✓</span>
             <span className="leading-tight">
               <a 
                 href="#it-consultancy" 
                 onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
-                className="cursor-pointer underline underline-offset-4 decoration-[#3B82F6] hover:decoration-blue-400 transition-colors"
+                className="cursor-pointer underline underline-offset-8 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors"
               >
                 IT Services Consultancy
               </a>
@@ -59,19 +67,19 @@ export const Hero = () => {
               <a 
                 href="#digital-marketing" 
                 onClick={(e) => handleScrollToFeature(e, 'digital-marketing')} 
-                className="cursor-pointer underline underline-offset-4 decoration-[#3B82F6] hover:decoration-blue-400 transition-colors"
+                className="cursor-pointer underline underline-offset-8 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors"
               >
                 Digital Marketing & Visibility
               </a>
             </span>
           </li>
           <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
-            <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5">✓</span>
             <span className="leading-tight">
               <a 
                 href="#corporate-tools" 
                 onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
-                className="cursor-pointer underline underline-offset-4 decoration-[#3B82F6] hover:decoration-blue-400 transition-colors"
+                className="cursor-pointer underline underline-offset-8 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors"
               >
                 Corporate Work Tools
               </a>
@@ -79,7 +87,7 @@ export const Hero = () => {
               <a 
                 href="#tech-integration" 
                 onClick={(e) => handleScrollToFeature(e, 'tech-integration')} 
-                className="cursor-pointer underline underline-offset-4 decoration-[#3B82F6] hover:decoration-blue-400 transition-colors"
+                className="cursor-pointer underline underline-offset-8 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors"
               >
                 Technology Integration & Support
               </a>
@@ -97,15 +105,18 @@ export const Hero = () => {
         </div>
 
         {/* Email Capture Form */}
-        <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl">
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl">
           <input 
             type="email" 
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email" 
-            className="w-full text-base sm:text-lg px-4 py-3.5 rounded-lg bg-white/5 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#3B82F6] transition-colors"
+            required
+            className="w-full text-base sm:text-lg px-4 py-3.5 rounded-lg bg-white/5 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#1E40AF] transition-colors"
           />
           <button 
             type="submit" 
-            className="flex items-center justify-center bg-[#3B82F6] text-white text-base sm:text-lg font-bold px-8 py-4 rounded-lg whitespace-nowrap hover:bg-blue-600 transition-colors shadow-sm cursor-pointer"
+            className="flex items-center justify-center bg-[#1E40AF] text-white text-base sm:text-lg font-bold px-8 py-4 rounded-lg whitespace-nowrap hover:bg-[#1E3A8A] transition-colors shadow-sm cursor-pointer"
           >
             Get started
           </button>

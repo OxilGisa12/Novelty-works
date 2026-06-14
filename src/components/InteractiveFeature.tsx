@@ -95,7 +95,7 @@ export const InteractiveFeatures = () => {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         
-        {/* Left Column: Forced vertical stack for consistent layout on all screens */}
+        {/* Left Column */}
         <div className="lg:col-span-5 flex flex-col justify-start gap-4">
           {features.map((feature, index) => {
             const isActive = index === activeIdx;
@@ -105,7 +105,6 @@ export const InteractiveFeatures = () => {
                 onClick={() => {
                   setActiveIdx(index);
                   window.history.pushState(null, '', `#${feature.id}`);
-                  
                   const section = document.getElementById('interactive-features');
                   if (section) {
                     section.scrollIntoView({ behavior: 'smooth' });
@@ -123,22 +122,22 @@ export const InteractiveFeatures = () => {
           })}
         </div>
 
-        {/* Right Column: Active Content Display (Full-width Card) */}
-        <div className="lg:col-span-7 bg-[#112240]/80 backdrop-blur-md rounded-3xl p-6 md:p-12 flex flex-col gap-6 border border-sky-500/30 shadow-2xl w-full">
+        {/* Right Column: Active Content Display (Dark Blue Accents) */}
+        <div className="lg:col-span-7 bg-[#112240]/80 backdrop-blur-md rounded-3xl p-6 md:p-12 flex flex-col gap-6 border border-[#1E40AF]/30 shadow-2xl w-full">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-none">
             {activeFeature.headline}
           </h2>
           <ul className="space-y-3 max-w-2xl">
             {activeFeature.bullets.map((bullet, i) => (
               <li key={i} className="flex items-start gap-2.5 text-sm md:text-base font-medium text-gray-200">
-                <span className="text-[#38bdf8] font-bold mt-0.5 shrink-0">✓</span>
+                <span className="text-[#1E40AF] font-bold mt-0.5 shrink-0">✓</span>
                 <span>{bullet}</span>
               </li>
             ))}
           </ul>
           <Link 
             to={`/services#${activeFeature.id}`}
-            className="bg-transparent border border-sky-400 text-sky-400 font-bold px-6 py-3 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-2 text-sm md:text-base text-center inline-block no-underline"
+            className="bg-[#1E40AF] text-white font-bold px-6 py-3 rounded-full w-fit hover:bg-[#1E3A8A] transition-colors cursor-pointer mt-2 text-sm md:text-base text-center inline-block no-underline shadow-sm"
           >
             {activeFeature.buttonText}
           </Link>

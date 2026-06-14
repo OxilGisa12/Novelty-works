@@ -62,7 +62,7 @@ export const Navbar = () => {
                 letterSpacing="1"
               >
                 <tspan fill="#FFFFFF">NOVELTY</tspan>
-                <tspan fill="#00D54B" dx="1">WORKS LTD</tspan>
+                <tspan fill="#16A34A" dx="1">WORKS LTD</tspan>
               </text>
             </svg>
           </a>
@@ -90,7 +90,7 @@ export const Navbar = () => {
               <a 
                 href={getLinkHref(item)} 
                 onClick={() => setIsOpen(false)} 
-                className="hover:text-[#3B82F6] transition-colors block py-1 w-fit"
+                className="hover:text-blue-700 transition-colors block py-1 w-fit"
               >
                 {item}
               </a>

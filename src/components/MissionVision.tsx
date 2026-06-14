@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 
 export const MissionVision = () => {
@@ -10,7 +9,7 @@ export const MissionVision = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 -mt-10 md:-mt-12 mb-16 relative z-10">
           
           {/* Card 1: Vision */}
-          <div className="bg-[#112240] rounded-[32px] p-10 text-white flex flex-col justify-between min-h-[420px] border border-sky-500/20 shadow-xl">
+          <div className="bg-[#112240] rounded-[32px] p-10 text-white flex flex-col justify-between min-h-[420px] border border-[#1E40AF]/40 shadow-xl">
             <div className="space-y-6 max-w-sm">
               <h3 className="text-4xl md:text-5xl font-bold tracking-tight leading-none">
                 Our Vision
@@ -21,14 +20,14 @@ export const MissionVision = () => {
             </div>
             <Link 
               to="/about"
-              className="bg-transparent border border-sky-400 text-sky-400 font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-8 text-center inline-block no-underline"
+              className="bg-transparent border border-[#1E40AF] text-white font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-[#1E40AF] hover:text-white transition-colors cursor-pointer mt-8 text-center inline-block no-underline"
             >
               Learn More
             </Link>
           </div>
 
           {/* Card 2: Mission */}
-          <div className="bg-[#112240] rounded-[32px] p-10 text-white flex flex-col justify-between min-h-[420px] border border-sky-500/20 shadow-xl">
+          <div className="bg-[#112240] rounded-[32px] p-10 text-white flex flex-col justify-between min-h-[420px] border border-[#1E40AF]/40 shadow-xl">
             <div className="space-y-6 max-w-sm">
               <h3 className="text-4xl md:text-5xl font-bold tracking-tight leading-none">
                 Our Mission
@@ -39,7 +38,7 @@ export const MissionVision = () => {
             </div>
             <Link 
               to="/about"
-              className="bg-transparent border border-sky-400 text-sky-400 font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-8 text-center inline-block no-underline"
+              className="bg-transparent border border-[#1E40AF] text-white font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-[#1E40AF] hover:text-white transition-colors cursor-pointer mt-8 text-center inline-block no-underline"
             >
               Learn More
             </Link>
