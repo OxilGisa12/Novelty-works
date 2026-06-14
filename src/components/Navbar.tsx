@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 const menuItems = [
+  'Home',
   'About Us',
   'Our Projects',
   'Services',
@@ -13,6 +14,7 @@ export const Navbar = () => {
 
   // Helper to determine the link destination based on concept note mapping
   const getLinkHref = (item: string) => {
+    if (item === 'Home') return '/';
     if (item === 'About Us') return '/about';
     if (item === 'Our Projects') return '/our-projects';
     if (item === 'Services') return '/services';
@@ -60,7 +62,6 @@ export const Navbar = () => {
                 letterSpacing="1"
               >
                 <tspan fill="#FFFFFF">NOVELTY</tspan>
-                {/* Logo colors strictly untouched as requested */}
                 <tspan fill="#00D54B" dx="1">WORKS LTD</tspan>
               </text>
             </svg>
