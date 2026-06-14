@@ -56,10 +56,10 @@ export const ChatWidget = () => {
 
   return (
     <>
-      {/* Floating Action Button - perfectly tucked into the bottom-right corner */}
+      {/* Floating Action Button - Green Theme, pinned to the corner */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-16 right-4 z-[9999] flex items-center justify-center w-14 h-14 bg-[#3B82F6] text-white rounded-full shadow-2xl cursor-pointer hover:bg-blue-600 transition-all duration-300 hover:scale-105 md:bottom-6 md:right-6 ${
+        className={`fixed bottom-4 right-4 z-[9999] flex items-center justify-center w-14 h-14 bg-[#00D54B] text-white rounded-full shadow-2xl cursor-pointer hover:bg-[#02B33E] transition-all duration-300 hover:scale-105 md:bottom-6 md:right-6 ${
           isOpen ? 'rotate-90 scale-90 opacity-0' : 'rotate-0 scale-100 opacity-100'
         }`}
         aria-label="Open chat"
@@ -69,9 +69,9 @@ export const ChatWidget = () => {
         </svg>
       </button>
 
-      {/* Chat Window - aligned to pop out smoothly from the corner */}
+      {/* Chat Window */}
       <div
-        className={`fixed bottom-32 right-[2vw] md:right-6 z-[9998] w-[96vw] md:bottom-20 md:w-96 h-[480px] max-h-[65vh] bg-[#0B132B] border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right ${
+        className={`fixed bottom-20 right-2 z-[9998] w-[96vw] md:bottom-20 md:right-6 md:w-96 h-[480px] max-h-[65vh] bg-[#0B132B] border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300 origin-bottom-right ${
           isOpen ? 'scale-100 opacity-100' : 'scale-0 opacity-0 pointer-events-none'
         }`}
       >
@@ -107,7 +107,7 @@ export const ChatWidget = () => {
               <div
                 className={`px-4 py-3 rounded-2xl text-sm leading-relaxed shadow-sm ${
                   msg.sender === 'user'
-                    ? 'bg-[#3B82F6] text-white rounded-br-none'
+                    ? 'bg-[#00D54B] text-white rounded-br-none'
                     : 'bg-white/5 text-gray-200 rounded-bl-none border border-white/5'
                 }`}
               >
@@ -126,18 +126,18 @@ export const ChatWidget = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Input Form */}
+        {/* Input Form - Green send button & focus state */}
         <form onSubmit={handleSend} className="p-4 bg-[#0B132B] border-t border-white/10 flex items-center gap-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your question here..."
-            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#3B82F6] transition-colors"
+            className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#00D54B] transition-colors"
           />
           <button
             type="submit"
-            className="bg-[#3B82F6] text-white p-3 rounded-xl hover:bg-blue-600 transition-colors cursor-pointer flex items-center justify-center"
+            className="bg-[#00D54B] text-white p-3 rounded-xl hover:bg-[#02B33E] transition-colors cursor-pointer flex items-center justify-center"
             aria-label="Send message"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
