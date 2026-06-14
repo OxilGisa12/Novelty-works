@@ -19,13 +19,13 @@ export const Hero = () => {
       <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-2xl mx-auto lg:mx-0 items-start text-left">
         
         {/* Massive Headline */}
-        <h1 className="text-3xl xs:text-4xl md:text-5xl font-semibold tracking-tight leading-tight break-words w-full">
+        <h1 className="text-4xl xs:text-5xl md:text-6xl font-semibold tracking-tight leading-tight break-words w-full">
           <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
         {/* Links List - Flawlessly left-aligned on the exact same vertical grid line */}
         <ul className="space-y-4 w-full flex flex-col items-start">
-          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-sm md:text-base font-medium">
+          <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
             <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
             <span className="leading-tight">
               <a 
@@ -45,7 +45,7 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-sm md:text-base font-medium">
+          <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
             <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
             <span className="leading-tight">
               <a 
@@ -65,7 +65,7 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-sm md:text-base font-medium">
+          <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
             <span className="text-[#3B82F6] font-bold shrink-0 mt-0.5">✓</span>
             <span className="leading-tight">
               <a 
@@ -101,18 +101,18 @@ export const Hero = () => {
           <input 
             type="email" 
             placeholder="Enter your email" 
-            className="w-full text-sm sm:text-base px-4 py-3.5 rounded-lg bg-white/5 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#3B82F6] transition-colors"
+            className="w-full text-base sm:text-lg px-4 py-3.5 rounded-lg bg-white/5 text-white placeholder-gray-400 border border-gray-600 focus:outline-none focus:border-[#3B82F6] transition-colors"
           />
           <button 
             type="submit" 
-            className="flex items-center justify-center bg-[#3B82F6] text-white text-base font-bold px-8 py-4 rounded-lg whitespace-nowrap hover:bg-blue-600 transition-colors shadow-sm cursor-pointer"
+            className="flex items-center justify-center bg-[#3B82F6] text-white text-base sm:text-lg font-bold px-8 py-4 rounded-lg whitespace-nowrap hover:bg-blue-600 transition-colors shadow-sm cursor-pointer"
           >
             Get started
           </button>
         </form>
 
         {/* Disclaimer text */}
-        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed break-words flex items-start gap-2 justify-start">
+        <p className="text-xs sm:text-sm text-gray-400 max-w-[500px] leading-relaxed break-words flex items-start gap-2 justify-start">
           <span className="inline-flex items-center justify-center w-3.5 h-3.5 border border-gray-400 rounded-full text-[9px] cursor-pointer shrink-0 mt-0.5 hover:bg-white hover:text-black transition-colors">i</span>
           <span>"We don't just implement technology — we build partnerships. Every client's success is a direct measure of our own" ~ Novelty Works Ltd</span>
         </p>

@@ -8,12 +8,12 @@ import { MissionVision } from './components/MissionVision';
 import { MemberReviews } from './components/MembersReviews';
 import { FAQs } from './components/FAQs';
 import { Footer } from './components/Footer';
-import { AboutUs } from './Pages/AboutUs';
-import { OurProjects } from './Pages/OurProjects';
-import { Services } from './Pages/Services';
-import { Insights } from './Pages/Insights';
-import { ReachUs } from './Pages/ReachUs';
-import { Policies } from "./Pages/Policies";
+import { AboutUs } from './pages/AboutUs';
+import { OurProjects } from './pages/OurProjects';
+import { Services } from './pages/Services';
+import { Insights } from './pages/Insights';
+import { ReachUs } from './pages/ReachUs';
+import { Policies } from "./pages/Policies";
 
 // Scroll to top helper to force page to start at the top or specific hash on navigation
 const ScrollToTop = () => {
