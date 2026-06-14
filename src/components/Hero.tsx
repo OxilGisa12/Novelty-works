@@ -16,14 +16,13 @@ export const Hero = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirects to the /reach-us page carrying the entered email as a query parameter
     window.location.href = `/reach-us?email=${encodeURIComponent(email)}`;
   };
 
   return (
     <div className="pt-36 md:pt-40 pb-16 min-h-[85vh] w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
       
-      {/* Left Column: Text & Elements - Strictly pinned to the left grid across all devices */}
+      {/* Left Column: Text & Elements */}
       <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-2xl mx-auto lg:mx-0 items-start text-left">
         
         {/* Massive Headline */}
@@ -31,11 +30,11 @@ export const Hero = () => {
           <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
-        {/* Links List - Flawlessly left-aligned on the exact same vertical grid line */}
+        {/* Links List - Forced straight sentences without wrapping on mobile */}
         <ul className="space-y-4 w-full flex flex-col items-start">
-          <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
+          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-base md:text-lg font-medium">
             <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5">✓</span>
-            <span className="leading-tight">
+            <span className="leading-tight whitespace-nowrap overflow-x-auto w-full scrollbar-none">
               <a 
                 href="#software-dev" 
                 onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
@@ -53,9 +52,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
+          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-base md:text-lg font-medium">
             <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5">✓</span>
-            <span className="leading-tight">
+            <span className="leading-tight whitespace-nowrap overflow-x-auto w-full scrollbar-none">
               <a 
                 href="#it-consultancy" 
                 onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
@@ -73,9 +72,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 w-full text-xs xs:text-sm sm:text-base md:text-lg font-medium">
+          <li className="flex items-start gap-3 w-full text-[11px] xs:text-xs sm:text-base md:text-lg font-medium">
             <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5">✓</span>
-            <span className="leading-tight">
+            <span className="leading-tight whitespace-nowrap overflow-x-auto w-full scrollbar-none">
               <a 
                 href="#corporate-tools" 
                 onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
