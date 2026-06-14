@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustTicker } from './components/TrustTicker';
@@ -6,7 +6,7 @@ import { InteractiveFeatures } from './components/InteractiveFeature';
 import { MissionVision } from './components/MissionVision';
 import { MemberReviews } from './components/MembersReviews';
 import { FAQs } from './components/FAQs';
-import { CompanyB } from './components/CompanyB';
+// import { CompanyB } from './components/CompanyB';
 import { Footer } from './components/Footer';
 
 export default function App() {
