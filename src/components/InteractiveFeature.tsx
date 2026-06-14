@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const features = [
   {
@@ -135,9 +136,12 @@ export const InteractiveFeatures = () => {
               </li>
             ))}
           </ul>
-          <button className="bg-transparent border border-sky-400 text-sky-400 font-bold px-6 py-3 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors pointer-events-auto cursor-pointer mt-2 text-sm md:text-base">
+          <Link 
+            to={`/services#${activeFeature.id}`}
+            className="bg-transparent border border-sky-400 text-sky-400 font-bold px-6 py-3 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-2 text-sm md:text-base text-center inline-block no-underline"
+          >
             {activeFeature.buttonText}
-          </button>
+          </Link>
         </div>
 
       </div>

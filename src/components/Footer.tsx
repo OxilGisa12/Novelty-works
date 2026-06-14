@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa6';
 
 export const Footer = () => {
@@ -10,10 +10,10 @@ export const Footer = () => {
         <div>
           <h3 className="font-bold text-white mb-6 tracking-tight text-base">Company</h3>
           <ul className="space-y-3 font-normal text-sm text-gray-400">
-            <li><a href="#" className="hover:text-sky-400 transition-colors">About</a></li>
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Team</a></li>
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Hiring</a></li>
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Internship</a></li>
+            <li><a href="/about" className="hover:text-sky-400 transition-colors">About</a></li>
+            <li><a href="/about" className="hover:text-sky-400 transition-colors">Team</a></li>
+            <li><a href="/reach-us" className="hover:text-sky-400 transition-colors">Hiring</a></li>
+            <li><a href="/reach-us" className="hover:text-sky-400 transition-colors">Internship</a></li>
           </ul>
         </div>
 
@@ -21,9 +21,9 @@ export const Footer = () => {
         <div>
           <h3 className="font-bold text-white mb-6 tracking-tight text-base">Legal & Privacy</h3>
           <ul className="space-y-3 font-normal text-sm text-gray-400">
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Policies</a></li>
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Client Privacy</a></li>
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Copyright & Terms</a></li>
+            <li><a href="/policies" className="hover:text-sky-400 transition-colors">Policies</a></li>
+            <li><a href="/policies" className="hover:text-sky-400 transition-colors">Client Privacy</a></li>
+            <li><a href="/policies" className="hover:text-sky-400 transition-colors">Copyright & Terms</a></li>
           </ul>
         </div>
 
@@ -32,8 +32,9 @@ export const Footer = () => {
           <h3 className="font-bold text-white mb-6 tracking-tight text-base">Contact & Location</h3>
           <ul className="space-y-3 font-normal text-sm text-gray-400 mb-6 leading-relaxed">
             <li><a href="tel:+25079459000" className="hover:text-sky-400 transition-colors">+250 794 590 000</a></li>
-            <li><address className="not-italic">KN 3 Rd, Kigali, Rwanda<br />East Africa</address></li>
-            <li><a href="#" className="hover:text-sky-400 transition-colors">Our Socials</a></li>
+            <li><a href="tel:+25079459000" className="hover:text-sky-400 transition-colors">info@noveltyworks.rw</a></li>
+            <li><address className="not-italic">KN 3 Rd, Kigali, Rwanda,East Africa</address></li>
+            <li><a href="/reach-us" className="hover:text-sky-400 transition-colors">Our Socials</a></li>
           </ul>
 
           {/* Social Media Icons using React Icons */}

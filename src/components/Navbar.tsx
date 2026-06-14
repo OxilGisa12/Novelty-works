@@ -3,15 +3,23 @@ import { useState } from 'react';
 const menuItems = [
   'About Us',
   'Our Projects',
-  'Team',
   'Services',
   'Insights',
-  'Careers',
   'Reach Us'
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Helper to determine the link destination based on concept note mapping
+  const getLinkHref = (item: string) => {
+    if (item === 'About Us') return '/about';
+    if (item === 'Our Projects') return '/our-projects';
+    if (item === 'Services') return '/services';
+    if (item === 'Insights') return '/insights';
+    if (item === 'Reach Us') return '/reach-us';
+    return '/';
+  };
 
   return (
     <>
@@ -79,7 +87,7 @@ export const Navbar = () => {
           {menuItems.map((item) => (
             <li key={item}>
               <a 
-                href={`#${item.toLowerCase().replace(/\s+/g, '-')}`} 
+                href={getLinkHref(item)} 
                 onClick={() => setIsOpen(false)} 
                 className="hover:text-[#3B82F6] transition-colors block py-1 w-fit"
               >

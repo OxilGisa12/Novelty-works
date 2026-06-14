@@ -1,4 +1,6 @@
 
+import { Link } from 'react-router-dom';
+
 export const MissionVision = () => {
   return (
     <section className="w-full bg-white px-6 py-16 text-gray-900 select-none border-none">
@@ -17,9 +19,12 @@ export const MissionVision = () => {
                 To be the most trusted technology partner for businesses and institutions in East and Central Africa — recognized for innovation, reliability, and transformative impact.
               </p>
             </div>
-            <button className="bg-transparent border border-sky-400 text-sky-400 font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-8">
+            <Link 
+              to="/about"
+              className="bg-transparent border border-sky-400 text-sky-400 font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-8 text-center inline-block no-underline"
+            >
               Learn More
-            </button>
+            </Link>
           </div>
 
           {/* Card 2: Mission */}
@@ -32,9 +37,12 @@ export const MissionVision = () => {
                 To empower organizations across Rwanda and Africa with tailored, cost-efficient digital solutions that drive growth, streamline operations, and enhance visibility in an increasingly connected world.
               </p>
             </div>
-            <button className="bg-transparent border border-sky-400 text-sky-400 font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-8">
+            <Link 
+              to="/about"
+              className="bg-transparent border border-sky-400 text-sky-400 font-bold text-sm px-8 py-3.5 rounded-full w-fit hover:bg-sky-400 hover:text-black transition-colors cursor-pointer mt-8 text-center inline-block no-underline"
+            >
               Learn More
-            </button>
+            </Link>
           </div>
 
         </div>
