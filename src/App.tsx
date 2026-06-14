@@ -1,4 +1,4 @@
-import  { useEffect } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -14,6 +14,7 @@ import { Services } from './pages/Services';
 import { Insights } from './pages/Insights';
 import { ReachUs } from './pages/ReachUs';
 import { Policies } from "./pages/Policies";
+import { ChatWidget } from './components/ChatWidget';
 
 // Scroll to top helper to force page to start at the top or specific hash on navigation
 const ScrollToTop = () => {
@@ -40,7 +41,7 @@ const ScrollToTop = () => {
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_70%_50%,_#1A365D_0%,_#0A192F_100%)] text-white overflow-x-hidden flex flex-col">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_70%_50%,_#1A365D_0%,_#0A192F_100%)] text-white overflow-x-hidden flex flex-col relative">
       <Navbar />
       
       <div className="flex-grow">
@@ -107,6 +108,9 @@ const MainLayout = () => {
       </div>
 
       <Footer />
+      
+      {/* Fully responsive floating chat widget */}
+      <ChatWidget />
     </div>
   );
 };
@@ -116,10 +120,10 @@ export default function App() {
     <Router>
       <ScrollToTop />
       <Routes>
-        {/* Policies Page: Pure white paper, no Navbar, no Footer, no dark gradient */}
+        {/* Policies Page: Pure white paper, no Navbar, no Footer, no dark gradient, no chatbot */}
         <Route path="/policies" element={<Policies />} />
         
-        {/* All other routes render the MainLayout */}
+        {/* All other routes render the MainLayout containing the ChatWidget */}
         <Route path="/*" element={<MainLayout />} />
       </Routes>
     </Router>
