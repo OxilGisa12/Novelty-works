@@ -28,7 +28,7 @@ const reviews = [
     stars: '★★★★★',
     text: '“Harmonizing our inventory system and setting up real-time business activity tracking streamlined our operations completely. Live monitoring has been a game changer.”',
     source: 'Umutaka Ltd',
-    link: '#', // Add relevant link here if available, or keep '#'
+    link: '#',
   }
 ];
 
@@ -40,11 +40,9 @@ export const MemberReviews = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
       
-      // Determine the scroll percentage
       const maxScroll = scrollWidth - clientWidth;
       const scrollPercentage = maxScroll > 0 ? scrollLeft / maxScroll : 0;
 
-      // Map scroll percentage to 3 dots (0, 1, or 2)
       if (scrollPercentage < 0.33) {
         setActiveDot(0);
       } else if (scrollPercentage < 0.66) {
@@ -57,7 +55,6 @@ export const MemberReviews = () => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      // Scroll by 85vw on small screens or 392px on larger screens
       const width = Math.min(scrollContainerRef.current.clientWidth * 0.85, 392);
       scrollContainerRef.current.scrollBy({ left: -width, behavior: 'smooth' });
     }
@@ -74,20 +71,26 @@ export const MemberReviews = () => {
     <section className="bg-white py-24 px-6 md:px-12 text-gray-900 w-full overflow-x-hidden">
       <div className="max-w-7xl mx-auto">
         
-        {/* Section Heading - Black text */}
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 tracking-tight text-gray-900">
-            Clients experiences & feedbacks
-        </h2>
+        {/* Section Heading - Removed whitespace-nowrap and added a responsive break so it wraps gracefully on small screens */}
+        <div className="w-full mb-16 px-4">
+          <h2 className="text-[28px] xs:text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900 text-center leading-snug max-w-xl mx-auto">
+            Clients experiences <br className="xs:hidden" />& feedbacks
+          </h2>
+        </div>
 
         {/* Carousel Container */}
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto w-full">
           
           {/* Scrollable Row */}
           <div 
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-8 overflow-x-auto scroll-smooth pb-8 pt-2 px-4 -mx-4 md:px-0 md:mx-0 select-none touch-pan-x"
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            className="flex gap-8 overflow-x-auto scroll-smooth pb-8 pt-2 px-4 -mx-4 md:px-0 md:mx-0 cursor-grab active:cursor-grabbing"
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
           >
             {reviews.map((review) => (
               <div 
@@ -95,7 +98,7 @@ export const MemberReviews = () => {
                 className="flex-none w-[82vw] sm:w-[360px] bg-white border border-gray-100/80 rounded-[32px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.10)] flex flex-col justify-between h-[420px]"
               >
                 <div>
-                  {/* Star Rating - Increased size to 2XL for normal web appearance */}
+                  {/* Star Rating */}
                   <div className="text-amber-500 text-2xl mb-5 tracking-widest">
                     {review.stars}
                   </div>
@@ -119,8 +122,8 @@ export const MemberReviews = () => {
             ))}
           </div>
 
-          {/* Navigation Controls (Arrows & Dots) */}
-          <div className="flex justify-between items-center mt-8 max-w-xs mx-auto md:mx-0">
+          {/* Navigation Controls */}
+          <div className="flex justify-between items-center mt-8 max-w-xs mx-auto">
             <button 
               onClick={scrollLeft}
               className="p-3.5 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors cursor-pointer text-gray-600 font-bold shadow-sm"
@@ -128,7 +131,7 @@ export const MemberReviews = () => {
               ←
             </button>
             
-            {/* Active/Inactive Pagination Dots - Gold Accent */}
+            {/* Active/Inactive Pagination Dots */}
             <div className="flex gap-2 items-center">
               <span className={`w-2.5 h-2.5 rounded-full transition-colors ${activeDot === 0 ? 'bg-amber-500' : 'bg-gray-300'}`}></span>
               <span className={`w-2.5 h-2.5 rounded-full transition-colors ${activeDot === 1 ? 'bg-amber-500' : 'bg-gray-300'}`}></span>

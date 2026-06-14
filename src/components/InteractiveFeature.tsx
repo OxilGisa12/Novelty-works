@@ -95,8 +95,8 @@ export const InteractiveFeatures = () => {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
         
-        {/* Left Column */}
-        <div className="lg:col-span-5 flex flex-col justify-start gap-4">
+        {/* Left Column: Kept uniformly small, using CSS scale from the left edge so the straight margin is perfectly maintained */}
+        <div className="lg:col-span-5 flex flex-col justify-start gap-6">
           {features.map((feature, index) => {
             const isActive = index === activeIdx;
             return (
@@ -110,10 +110,10 @@ export const InteractiveFeatures = () => {
                     section.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className={`text-left transition-all duration-300 ease-in-out w-full ${
+                className={`text-left w-full font-['Abril_Fatface'] tracking-tight transition-all duration-300 ease-in-out text-2xl sm:text-3xl origin-left ${
                   isActive 
-                    ? 'opacity-100 text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight font-[\'Abril_Fatface\'] text-white' 
-                    : 'opacity-40 hover:opacity-70 text-2xl sm:text-3xl md:text-4xl font-normal tracking-tight font-[\'Abril_Fatface\'] cursor-pointer hover:text-white'
+                    ? 'opacity-100 text-white scale-110 font-semibold' 
+                    : 'opacity-40 hover:opacity-70 text-gray-400 hover:text-white font-normal cursor-pointer scale-100'
                 }`}
               >
                 {feature.title}
@@ -137,7 +137,7 @@ export const InteractiveFeatures = () => {
           </ul>
           <Link 
             to={`/services#${activeFeature.id}`}
-            className="bg-[#1E40AF] text-white font-bold px-6 py-3 rounded-full w-fit hover:bg-[#1E3A8A] transition-colors cursor-pointer mt-2 text-sm md:text-base text-center inline-block no-underline shadow-sm"
+            className="bg-transparent border border-[#1E40AF] text-white font-bold px-6 py-3 rounded-full w-fit hover:bg-[#1E40AF] transition-colors cursor-pointer mt-2 text-sm md:text-base text-center inline-block no-underline shadow-sm"
           >
             {activeFeature.buttonText}
           </Link>
