@@ -12,7 +12,7 @@ export const Hero = () => {
   };
 
   return (
-    <div className="pt-24 pb-16 min-h-screen w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 sm:px-8 max-w-7xl mx-auto overflow-hidden">
+    <div className="pt-24 pb-16 min-h-screen w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 sm:px-8 max-w-7xl mx-auto overflow-hidden">
       
       {/* Left Column: Text - Constrained to max-w-full to prevent overflow on small screens */}
       <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0">
@@ -22,11 +22,11 @@ export const Hero = () => {
           <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
-        {/* Links List - 3 distinct ticks, each on a single continuous line without breaking */}
+        {/* Links List - 3 ticks, scaled down specifically on mobile to fit one straight continuous line without horizontal scrolling */}
         <ul className="space-y-4 w-full">
-          <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base lg:text-lg font-medium pl-0 whitespace-nowrap overflow-x-auto scrollbar-none py-1">
+          <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
             <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
-            <span className="leading-none">
+            <span className="leading-none whitespace-nowrap">
               <a 
                 href="#software-dev" 
                 onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
@@ -44,9 +44,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base lg:text-lg font-medium pl-0 whitespace-nowrap overflow-x-auto scrollbar-none py-1">
+          <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
             <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
-            <span className="leading-none">
+            <span className="leading-none whitespace-nowrap">
               <a 
                 href="#it-consultancy" 
                 onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
@@ -64,9 +64,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base lg:text-lg font-medium pl-0 whitespace-nowrap overflow-x-auto scrollbar-none py-1">
+          <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
             <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
-            <span className="leading-none">
+            <span className="leading-none whitespace-nowrap">
               <a 
                 href="#corporate-tools" 
                 onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
@@ -102,9 +102,9 @@ export const Hero = () => {
         </form>
 
         {/* Disclaimer text */}
-        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed pt-2 break-words">
-          "We don't just implement technology — we build partnerships. Every client's success is a direct measure of our own" ~ Novelty Works Ltd
-          <span className="inline-flex items-center justify-center w-3.5 h-3.5 border border-gray-400 rounded-full text-[9px] cursor-pointer ml-1 hover:bg-white hover:text-black transition-colors">i</span>
+        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed pt-2 break-words flex items-start gap-2">
+          <span className="inline-flex items-center justify-center w-3.5 h-3.5 border border-gray-400 rounded-full text-[9px] cursor-pointer shrink-0 mt-0.5 hover:bg-white hover:text-black transition-colors">i</span>
+          <span>"We don't just implement technology — we build partnerships. Every client's success is a direct measure of our own" ~ Novelty Works Ltd</span>
         </p>
 
       </div>
