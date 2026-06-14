@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const reviews = [
   {
@@ -56,13 +57,16 @@ export const MemberReviews = () => {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -392, behavior: 'smooth' });
+      // Scroll by 85vw on small screens or 392px on larger screens
+      const width = Math.min(scrollContainerRef.current.clientWidth * 0.85, 392);
+      scrollContainerRef.current.scrollBy({ left: -width, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 392, behavior: 'smooth' });
+      const width = Math.min(scrollContainerRef.current.clientWidth * 0.85, 392);
+      scrollContainerRef.current.scrollBy({ left: width, behavior: 'smooth' });
     }
   };
 
@@ -82,13 +86,13 @@ export const MemberReviews = () => {
           <div 
             ref={scrollContainerRef}
             onScroll={handleScroll}
-            className="flex gap-8 overflow-x-auto scroll-smooth pb-8 pt-2 px-4 -mx-4 md:px-0 md:mx-0 select-none"
+            className="flex gap-8 overflow-x-auto scroll-smooth pb-8 pt-2 px-4 -mx-4 md:px-0 md:mx-0 select-none touch-pan-x"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {reviews.map((review) => (
               <div 
                 key={review.id} 
-                className="flex-none w-[360px] bg-white border border-gray-100/80 rounded-[32px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.10)] flex flex-col justify-between h-[420px]"
+                className="flex-none w-[82vw] sm:w-[360px] bg-white border border-gray-100/80 rounded-[32px] p-8 shadow-[0_8px_30px_rgb(0,0,0,0.10)] flex flex-col justify-between h-[420px]"
               >
                 <div>
                   {/* Star Rating - Increased size to 2XL for normal web appearance */}
@@ -96,17 +100,17 @@ export const MemberReviews = () => {
                     {review.stars}
                   </div>
                   {/* Review Text */}
-                  <p className="text-gray-800 leading-relaxed font-medium text-base">
+                  <p className="text-gray-800 leading-relaxed font-medium text-base break-words">
                     {review.text}
                   </p>
                 </div>
                 {/* Source with clickable link */}
-                <div className="mt-6 text-sm font-bold text-gray-900">
+                <div className="mt-6 text-sm font-bold text-gray-900 truncate">
                   <a 
                     href={review.link} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="hover:text-amber-500 transition-colors underline underline-offset-4"
+                    className="hover:text-amber-500 transition-colors underline underline-offset-4 inline-block max-w-full truncate"
                   >
                     {review.source}
                   </a>
