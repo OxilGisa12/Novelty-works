@@ -1,4 +1,6 @@
 import React from 'react';
+// 1. Import the image directly (adjust the relative path to where your image actually is)
+import noveltyBanner from '../assets/noveltybanner.png'; // or './noveltybanner.png' if it's in the same folder
 
 export const Hero = () => {
   const handleScrollToFeature = (e: React.MouseEvent<HTMLAnchorElement>, featureId: string) => {
@@ -14,15 +16,13 @@ export const Hero = () => {
   return (
     <div className="pt-24 pb-16 min-h-screen w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-4 sm:px-8 max-w-7xl mx-auto overflow-hidden">
       
-      {/* Left Column: Text - Constrained to max-w-full to prevent overflow on small screens */}
+      {/* Left Column: Text */}
       <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0">
         
-        {/* Massive Headline with Orpheus font on #1 */}
         <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight break-words">
           <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
-        {/* Links List - 3 ticks, scaled down specifically on mobile to fit one straight continuous line without horizontal scrolling */}
         <ul className="space-y-4 w-full">
           <li className="flex items-center gap-2.5 text-[11px] xs:text-xs sm:text-sm md:text-base font-medium pl-0 py-1 w-full">
             <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
@@ -86,7 +86,15 @@ export const Hero = () => {
           </li>
         </ul>
 
-        {/* Email Capture Form */}
+        {/* Mobile Banner Image - Uses the imported variable */}
+        <div className="flex items-center justify-center w-full py-4 lg:hidden">
+          <img 
+            src={noveltyBanner} 
+            alt="Novelty Digital Solutions Banner" 
+            className="w-full max-w-[280px] h-auto object-contain rounded-2xl shadow-2xl"
+          />
+        </div>
+
         <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl pt-2">
           <input 
             type="email" 
@@ -101,12 +109,20 @@ export const Hero = () => {
           </button>
         </form>
 
-        {/* Disclaimer text */}
         <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed pt-2 break-words flex items-start gap-2">
           <span className="inline-flex items-center justify-center w-3.5 h-3.5 border border-gray-400 rounded-full text-[9px] cursor-pointer shrink-0 mt-0.5 hover:bg-white hover:text-black transition-colors">i</span>
           <span>"We don't just implement technology — we build partnerships. Every client's success is a direct measure of our own" ~ Novelty Works Ltd</span>
         </p>
 
+      </div>
+
+      {/* Desktop Banner Image - Uses the imported variable */}
+      <div className="hidden lg:col-span-5 lg:flex items-center justify-center w-full h-full p-4">
+        <img 
+          src={noveltyBanner} 
+          alt="Novelty Digital Solutions Banner" 
+          className="w-full max-w-md h-auto object-contain rounded-2xl shadow-2xl"
+        />
       </div>
       
     </div>
