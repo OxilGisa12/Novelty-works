@@ -30,11 +30,75 @@ export const Hero = () => {
           <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
-        {/* Links List - Ticks perfectly aligned, unbroken straight sentences */}
-        <ul className="space-y-4 w-full flex flex-col items-start">
-          <li className="flex items-start gap-3 w-full text-[13px] xs:text-sm sm:text-base md:text-lg font-medium">
+        {/* Mobile Links List: Perfectly aligned individual ticks for small screens */}
+        <ul className="space-y-4 w-full flex flex-col items-start md:hidden">
+          <li className="flex items-start gap-2.5 w-full text-[13px] xs:text-sm font-medium">
             <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
-            <span className="leading-normal whitespace-nowrap overflow-x-auto w-full scrollbar-none pb-1">
+            <a 
+              href="#software-dev" 
+              onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
+              className="inline-block leading-snug cursor-pointer underline underline-offset-[6px] decoration-2 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors break-words"
+            >
+              Software Development
+            </a>
+          </li>
+          <li className="flex items-start gap-2.5 w-full text-[13px] xs:text-sm font-medium">
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
+            <a 
+              href="#cloud-services" 
+              onClick={(e) => handleScrollToFeature(e, 'cloud-services')} 
+              className="inline-block leading-snug cursor-pointer underline underline-offset-[6px] decoration-2 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors break-words"
+            >
+              Cloud Services Management
+            </a>
+          </li>
+          <li className="flex items-start gap-2.5 w-full text-[13px] xs:text-sm font-medium">
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
+            <a 
+              href="#it-consultancy" 
+              onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
+              className="inline-block leading-snug cursor-pointer underline underline-offset-[6px] decoration-2 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors break-words"
+            >
+              IT Services Consultancy
+            </a>
+          </li>
+          <li className="flex items-start gap-2.5 w-full text-[13px] xs:text-sm font-medium">
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
+            <a 
+              href="#digital-marketing" 
+              onClick={(e) => handleScrollToFeature(e, 'digital-marketing')} 
+              className="inline-block leading-snug cursor-pointer underline underline-offset-[6px] decoration-2 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors break-words"
+            >
+              Digital Marketing & Visibility
+            </a>
+          </li>
+          <li className="flex items-start gap-2.5 w-full text-[13px] xs:text-sm font-medium">
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
+            <a 
+              href="#corporate-tools" 
+              onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
+              className="inline-block leading-snug cursor-pointer underline underline-offset-[6px] decoration-2 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors break-words"
+            >
+              Corporate Work Tools
+            </a>
+          </li>
+          <li className="flex items-start gap-2.5 w-full text-[13px] xs:text-sm font-medium">
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
+            <a 
+              href="#tech-integration" 
+              onClick={(e) => handleScrollToFeature(e, 'tech-integration')} 
+              className="inline-block leading-snug cursor-pointer underline underline-offset-[6px] decoration-2 decoration-[#1E40AF] hover:decoration-[#1E3A8A] transition-colors break-words"
+            >
+              Technology Integration & Support
+            </a>
+          </li>
+        </ul>
+
+        {/* Desktop Links List: 3 combined inline items (Visible only on desktop screens) */}
+        <ul className="space-y-4 w-full flex-col items-start hidden md:flex">
+          <li className="flex items-start gap-3 w-full sm:text-base md:text-lg font-medium">
+            <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
+            <span className="leading-normal w-full pb-1 break-words">
               <a 
                 href="#software-dev" 
                 onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
@@ -52,9 +116,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 w-full text-[13px] xs:text-sm sm:text-base md:text-lg font-medium">
+          <li className="flex items-start gap-3 w-full sm:text-base md:text-lg font-medium">
             <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
-            <span className="leading-normal whitespace-nowrap overflow-x-auto w-full scrollbar-none pb-1">
+            <span className="leading-normal w-full pb-1 break-words">
               <a 
                 href="#it-consultancy" 
                 onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
@@ -72,9 +136,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 w-full text-[13px] xs:text-sm sm:text-base md:text-lg font-medium">
+          <li className="flex items-start gap-3 w-full sm:text-base md:text-lg font-medium">
             <span className="text-[#1E40AF] font-bold shrink-0 mt-0.5 leading-none">✓</span>
-            <span className="leading-normal whitespace-nowrap overflow-x-auto w-full scrollbar-none pb-1">
+            <span className="leading-normal w-full pb-1 break-words">
               <a 
                 href="#corporate-tools" 
                 onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
