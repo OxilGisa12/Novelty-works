@@ -12,22 +12,21 @@ export const Hero = () => {
   };
 
   return (
-    <div className="pt-24 pb-16 min-h-screen w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 sm:px-8 max-w-7xl mx-auto">
+    <div className="pt-24 pb-16 min-h-screen w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center px-6 sm:px-8 max-w-7xl mx-auto overflow-hidden">
       
-      {/* Left Column: Text - Uses responsive constraints to keep it compact on mobile but wide on desktop */}
-      <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white max-w-xl lg:max-w-2xl mx-auto lg:mx-0">
+      {/* Left Column: Text - Constrained to max-w-full to prevent overflow on small screens */}
+      <div className="lg:col-span-7 flex flex-col justify-center space-y-6 text-white w-full max-w-xl lg:max-w-2xl mx-auto lg:mx-0">
         
-        {/* Massive Headline - Responsive sizing keeping it tight on mobile */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] font-['Abril_Fatface']">
-          Rwanda’s #1 <br />
-          choice for smart <br />
-          digital solutions
+        {/* Massive Headline with Orpheus font on #1 */}
+        <h1 className="text-4xl md:text-5xl font-semibold tracking-tight leading-tight break-words">
+          <span className="font-['Orpheus']">Rwanda's #1 <br />Choice For Smart <br />Digital Solutions</span>
         </h1>
 
-        {/* Links List - Permanently underlined for mobile visibility using blue accents */}
-        <ul className="space-y-4">
-          <li className="flex items-start gap-3 text-base md:text-lg font-medium leading-relaxed pl-0">
-            <span>
+        {/* Links List - 3 distinct ticks, each on a single continuous line without breaking */}
+        <ul className="space-y-4 w-full">
+          <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base lg:text-lg font-medium pl-0 whitespace-nowrap overflow-x-auto scrollbar-none py-1">
+            <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
+            <span className="leading-none">
               <a 
                 href="#software-dev" 
                 onClick={(e) => handleScrollToFeature(e, 'software-dev')} 
@@ -45,8 +44,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 text-base md:text-lg font-medium leading-relaxed pl-0">
-            <span>
+          <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base lg:text-lg font-medium pl-0 whitespace-nowrap overflow-x-auto scrollbar-none py-1">
+            <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
+            <span className="leading-none">
               <a 
                 href="#it-consultancy" 
                 onClick={(e) => handleScrollToFeature(e, 'it-consultancy')} 
@@ -64,8 +64,9 @@ export const Hero = () => {
               </a>
             </span>
           </li>
-          <li className="flex items-start gap-3 text-base md:text-lg font-medium leading-relaxed pl-0">
-            <span>
+          <li className="flex items-center gap-3 text-xs sm:text-sm md:text-base lg:text-lg font-medium pl-0 whitespace-nowrap overflow-x-auto scrollbar-none py-1">
+            <span className="text-[#3B82F6] font-bold shrink-0">✓</span>
+            <span className="leading-none">
               <a 
                 href="#corporate-tools" 
                 onClick={(e) => handleScrollToFeature(e, 'corporate-tools')} 
@@ -85,7 +86,7 @@ export const Hero = () => {
           </li>
         </ul>
 
-        {/* Email Capture Form - Stacking on mobile, row on larger screens */}
+        {/* Email Capture Form */}
         <form className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full max-w-xl pt-2">
           <input 
             type="email" 
@@ -101,7 +102,7 @@ export const Hero = () => {
         </form>
 
         {/* Disclaimer text */}
-        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed pt-2">
+        <p className="text-xs text-gray-400 max-w-[500px] leading-relaxed pt-2 break-words">
           "We don't just implement technology — we build partnerships. Every client's success is a direct measure of our own" ~ Novelty Works Ltd
           <span className="inline-flex items-center justify-center w-3.5 h-3.5 border border-gray-400 rounded-full text-[9px] cursor-pointer ml-1 hover:bg-white hover:text-black transition-colors">i</span>
         </p>

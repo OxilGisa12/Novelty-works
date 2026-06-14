@@ -72,7 +72,7 @@ export const MemberReviews = () => {
         
         {/* Section Heading - Black text */}
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-16 tracking-tight text-gray-900">
-            Clients experiences & feedback
+            Clients experiences & feedbacks
         </h2>
 
         {/* Carousel Container */}
